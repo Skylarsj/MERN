@@ -9,14 +9,14 @@ const Color = (props) => {
     const creatingColor = (e) => {
         setColor({
             ...color,
-            [e.targe.name]: e.target.value
+            [e.target.name]: e.target.value
         })
     };
     return(
         <div>
             <form onSubmit={ creatingColor }>
                 <div>
-                    <label>First Name: </label> 
+                    <label>Color </label> 
                     <input class="w-30 m-3 border border-sky-500" id="color" name="color" type="text" onChange={creatingColor} />
                 </div>
             </form>
