@@ -13,11 +13,11 @@ const Color = (props) => {
         })
     };
     return(
-        <div>
+        <div class="flex justify-center">
             <form onSubmit={ creatingColor }>
                 <div>
-                    <label>Color </label> 
-                    <input class="w-30 m-3 border border-sky-500" id="color" name="color" type="text" onChange={creatingColor} />
+                    <input class="w-30 h-8 m-3 p-3 border border-sky-500" id="color" name="color" type="text" onChange={creatingColor} placeholder="Color"/>
+                <button class="rounded-full w-20 border border-sky p-1 bg-sky-300">Submit</button>
                 </div>
             </form>
         </div>
