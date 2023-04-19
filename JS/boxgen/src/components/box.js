@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Color from './boxGen'
 
 const Box = (props) => {
     return(

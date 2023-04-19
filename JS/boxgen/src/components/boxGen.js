@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
+import Box from './box'
 
-const Color = (props) => {
+const Color = () => {
     
     const [color, setColor] = useState({
         color: "",
@@ -9,11 +10,15 @@ const Color = (props) => {
     });
 
     const creatingColor = (e) => {
-        e.preventdfault();
         setColor({
             ...color,
             [e.target.name]: e.target.value
         })
+        
+        
+        e.preventDefault();
+
+
     };
     return(
         <div class="flex justify-center">
