@@ -1,13 +1,22 @@
-import React, {useState} from "react";
+import React from "react";
 
 const Box = (props) => {
 
     const { boxGen } = props
-    
+
     return(
         <div>
-            <div class="w-10 h-10 border border-sky-500 bg-sky-500"/>
-            <div class="w-{props.width} h-{props.height} border border-sky-500 bg-{props.color}"/>
+            <div class="w-10 h-10 border border-red-500 bg-sky-500"/>
+            {
+                boxGen.map((box, index) => (
+                <div key={index} style={{
+                    width: box.width,
+                    height: box.height,
+                    backgroundColor: box.color
+                }}>
+                </div>
+                ))
+            }
         </div>
     );
 };

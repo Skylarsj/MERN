@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="flex flex-col justify-center">
       <Color boxgen={ boxGen } SetBoxGen={ SetBoxGen }/>
+      <Box/>
     </div>
   );
 }
