@@ -8,11 +8,10 @@ function App() {
 
   const [boxGen, SetBoxGen] = useState ([]);
 
-  
+
   return (
-    <div class="flex flex-col justify-center">
-      <Color/>
-      <Box/>
+    <div className="flex flex-col justify-center">
+      <Color boxgen={ boxGen } SetBoxGen={ SetBoxGen }/>
     </div>
   );
 }
