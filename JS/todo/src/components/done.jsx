@@ -1,24 +1,28 @@
 import React from 'react';
 
-const List = ({list}) => {
+const List = ({list, setList}) => {
 
-    console.log(list)
+    const testing = (item, index) => {
+        
+            console.log(item, index)
+    }
 
     return(
         <div className="flex w-64 flex-col-reverse mx-auto">
             {
                 list.map((item, index) => (
-                    <button key={index} className="
-                    flex
-                    items-center h-10 w-full
-                    rounded-md
-                    m-3
-                    bg-sky-500
-                    hover:bg-sky-700
-                    font-bold
-                    pl-3">
-                        {item.name}
-                    </button>
+                    <div onClick={testing(item, index)}
+                    key={index} className="
+                        flex
+                        items-center h-10 w-full
+                        rounded-md
+                        m-3
+                        bg-sky-500
+                        hover:bg-sky-700
+                        font-bold
+                        pl-3">
+                            {item.name}
+                    </div>
                 ))
             }
         </div>

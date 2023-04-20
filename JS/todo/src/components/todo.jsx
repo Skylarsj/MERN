@@ -4,6 +4,7 @@ const Todo = ({list, setList}) => {
 
     const [todo, setTodo] = useState({
         name: "",
+        id: 0,
         done: false
     });
     const changeHandler = (e) => {
@@ -20,12 +21,14 @@ const Todo = ({list, setList}) => {
     setList([
         ...list, {
             name: todo.name,
+            id: todo.id,
             done: false
         }
     ])
 
     setTodo({
         name:"",
+        id: todo.id +1,
         done: false
     })
 
