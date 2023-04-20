@@ -6,8 +6,8 @@ const Color = ({boxGen, setBoxGen}) => {
 
     const [box, setBox] = useState({
         color: "",
-        width: 0,
-        height: 0
+        width: "",
+        height: ""
     });
     const formUpdate = (e) =>{
         setBox({
@@ -26,10 +26,13 @@ const Color = ({boxGen, setBoxGen}) => {
             height: box.height + "px"
         }
         ])
-        
 
-        console.log(boxGen)
-
+    setBox({
+        color: "",
+        width: "",
+        height: ""
+    });
+    
     };
     return(
         <div class="flex justify-center">
