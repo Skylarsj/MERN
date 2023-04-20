@@ -6,7 +6,6 @@ const Todo = ({list, setList}) => {
         name: "",
         done: false
     });
-
     const changeHandler = (e) => {
         setTodo({
             ...todo,
@@ -43,8 +42,8 @@ const Todo = ({list, setList}) => {
                         placeholder="name">
                 </input>
 
-                <button className="rounded-full p-2 bg-green-400">
-                    add to ToDo
+                <button className="rounded-full p-2 hover:bg-green-300 bg-green-600">
+                    add to do
                 </button>
             </form>
         </div>
