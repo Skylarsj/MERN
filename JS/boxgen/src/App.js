@@ -6,13 +6,13 @@ import Box from './components/box'
 
 function App() {
 
-  const [boxGen, SetBoxGen] = useState ([]);
+  const [boxGen, setBoxGen] = useState([]);
 
 
   return (
     <div className="flex flex-col justify-center">
-      <Color boxgen={ boxGen } SetBoxGen={ SetBoxGen }/>
-      <Box/>
+      <Color boxGen={ boxGen } setBoxGen={ setBoxGen }/>
+      <Box boxGen={ boxGen }/>
     </div>
   );
 }

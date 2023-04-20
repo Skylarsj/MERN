@@ -1,20 +1,19 @@
 import React from "react";
 
-const Box = (props) => {
+const Box = ({boxGen}) => {
 
-    const { boxGen } = props
+    console.log(boxGen)
 
     return(
         <div>
-            <div class="w-10 h-10 border border-red-500 bg-sky-500"/>
             {
                 boxGen.map((box, index) => (
-                <div key={index} style={{
-                    width: box.width,
-                    height: box.height,
-                    backgroundColor: box.color
-                }}>
-                </div>
+                    <div key={index} style={{
+                        width: box.width,
+                        height: box.height,
+                        backgroundColor: box.color
+                        }}>
+                    </div>
                 ))
             }
         </div>
