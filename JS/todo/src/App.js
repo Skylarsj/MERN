@@ -9,7 +9,7 @@ function App() {
   const [list, setList] = useState([]);
   
   return (
-    <div className="App">
+    <div className="App flex-col justify-center">
       <h1 className="font-bold">To Do List</h1>
       <Todo list={list} setList={setList}/>
       <List list={list}/>
