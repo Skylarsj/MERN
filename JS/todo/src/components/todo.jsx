@@ -39,7 +39,7 @@ const Todo = ({list, setList}) => {
                         name="name"
                         type="text"
                         onChange={changeHandler}
-                        placeholder="name">
+                        placeholder="task">
                 </input>
 
                 <button className="rounded-full p-2 hover:bg-green-300 bg-green-600">
