@@ -7,6 +7,8 @@ const Todo = ({list, setList}) => {
         id: 0,
         done: false
     });
+    const [valid, setValid] = useState(true)
+
     const changeHandler = (e) => {
         setTodo({
             ...todo,
@@ -15,6 +17,14 @@ const Todo = ({list, setList}) => {
     };
 
     const submitEvent = (e) => {
+
+    if((todo.name.length) < 1){
+        setValid(false)
+        e.preventDefault();
+        return;
+    };
+    
+    setValid(true);
 
         e.preventDefault();
 
@@ -37,6 +47,7 @@ const Todo = ({list, setList}) => {
     return(
         <div className="flex justify-center">
             <form onSubmit={submitEvent}>
+                {valid ? null: <p>task must have a name</p>}
                 <input className="w-3- h-3- m-3 p-1 border bg-green-200 rounded"
                         value={todo.name}
                         name="name"
@@ -44,7 +55,6 @@ const Todo = ({list, setList}) => {
                         onChange={changeHandler}
                         placeholder="task">
                 </input>
-
                 <button className="rounded-full p-2 hover:bg-green-300 bg-green-600">
                     add to do
                 </button>
