@@ -8,9 +8,9 @@ const Tabs = () => {
         setToggleState(index);
     };
 
-    const tabClassName = (index) => classNames("flex-row tabs w-1/3 h-full", { "bg-white" : toggleState === index }, { "bg-rose-500": toggleState !== index });
+    const tabClassName = (index) => classNames("flex-row tabs w-1/3 h-full", { "bg-white ease-in duration-300" : toggleState === index }, { "bg-rose-500 ease-out duration-300": toggleState !== index });
 
-    const content = (index) => classNames("content bg-white", { "active-content": toggleState === index }, { "hidden": toggleState !== index });
+    const content = (index) => classNames("content bg-white", { "hidden": toggleState !== index });
 
     return (
         <div className="container border w-1/2 h-[300px] m-auto rounded bg-white">
