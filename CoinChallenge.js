@@ -30,15 +30,15 @@ function fiveHeads() {
     return new Promise( (resolve, reject) => {
         let headCount = 0
         let tries = 0
-        let tooMany = 0
+        let tooMany = 100
 
         while(headCount < 5){
             tries++
-            tooMany
             let flip = tossCoin();
 
             if (flip === "heads"){
                 headCount ++;
+
                 console.log(headCount)
             } else {
                 headCount = 0
