@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import logo from './pokeapi.png'
+import axios from 'axios';
 const Api = () => {
 
     const [pokemon, setPokemon] = useState([]);
 
 
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon?limit=807")
+        axios.get("https://pokeapi.co/api/v2/pokemon?limit=807")
         .then(response => {
         return response.json();
         }).then(response => {
@@ -22,9 +23,9 @@ const Api = () => {
             <div className="flex bg-[#EF5350] w-full h-15">
                 <img clasName="pl-10"src={logo} alt="logo"/>
             </div>
-                <div className="body font-bold text-lg">
+                <div className=" flex flex-col font-bold text-lg">
                     {pokemon.map((pokemon, index)=>{
-                        return(<li key={index}>{pokemon.name}</li>)
+                        return(<li className=""key={index}>{pokemon.name}</li>)
                     })}
                 </div>
         </div>
