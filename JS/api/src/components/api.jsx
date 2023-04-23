@@ -8,11 +8,9 @@ const Api = () => {
     useEffect(() => {
         fetch("https://pokeapi.co/api/v2/pokemon?limit=807")
         .then(response => {
-        // not the actual JSON response body but the entire HTTP response
         return response.json();
         }).then(response => {
             setPokemon(response.results)
-        // we now run another promise to parse the HTTP response into usable JSON
         console.log(response);
         }).catch(err=>{
         console.log(err);
@@ -34,22 +32,3 @@ const Api = () => {
     
 }
 export default Api
-
-// const Example = (props) => {
-//     const [people, setPeople] = useState([]);
-
-//     useEffect(() => {
-//         fetch('https://swapi.dev/api/people/')
-//             .then(response => response.json())
-//             .then(response => setPeople(response.results))
-//     }, []);
-
-//     return (
-//         <div>
-//             {people.length > 0 && people.map((person, index)=>{
-//                 return (<div key={index}>{person.name}</div>)
-//             })}
-//         </div>
-//     );
-// }
-// export default Example;
