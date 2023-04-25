@@ -1,7 +1,9 @@
 import './App.css';
-import Header from './components/header'
-import Navigation from './components/navigation'
-import Main from './components/main'
+import Header from './components/header';
+import Navigation from './components/navigation';
+import Main from './components/main';
+import SubContent from './components/subContent';
+import Ad from './components/advertisement';
 
 function App() {
   return (
@@ -9,7 +11,12 @@ function App() {
       <Header/>
       <div className="flex">
       <Navigation/>
-        <Main/>
+        <Main>
+          <SubContent/>
+          <SubContent/>
+          <SubContent/>
+          <Ad/>
+        </Main>
       </div>
     </div>
   );
