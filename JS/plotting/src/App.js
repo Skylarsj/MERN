@@ -7,7 +7,7 @@ import Ad from './components/advertisement';
 
 function App() {
   return (
-    <div className="App container p-2 m-auto bg-[#dddddd]">
+    <div className="App container p-2 m-auto w-[800px] bg-[#dddddd]">
       <Header/>
       <div className="flex">
       <Navigation/>
