@@ -3,7 +3,7 @@ import React from "react";
 const Box = ({boxGen}) => {
 
     console.log(boxGen)
-
+    const Update = Ola
     return(
         <div>
             {
