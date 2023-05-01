@@ -14,6 +14,7 @@ const createUser = ()=>{
         id: id
     }
     (id + 1);
+    return newUser;
 };
 
 const createCompany = ()=>{
@@ -27,3 +28,8 @@ const createCompany = ()=>{
     }
 }
 app.use(express.json() );
+app.use(express.urlencoded({extended:true}));
+
+app.get("api/users", (req, res) => {
+    res.json(createUser)
+});
