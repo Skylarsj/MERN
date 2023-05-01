@@ -4,16 +4,13 @@ const port = 8000;
 
 const {faker} = require('@faker-js/faker');
 const createUser = ()=>{
-    let id = 0;
     const newUser = {
         passwoed: faker.internet.password(),
         email: faker.internet.email(),
         phoneNumber: faker.phone.number(),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
-        id: id
     }
-    (id + 1);
     return newUser;
 };
 
@@ -31,5 +28,8 @@ app.use(express.json() );
 app.use(express.urlencoded({extended:true}));
 
 app.get("api/users", (req, res) => {
-    res.json(createUser)
+    const newUser = createUser();
+    res.json(newUser)
 });
+
+app.listen( port, () => console.log(`Listening on port: ${port}`) );
