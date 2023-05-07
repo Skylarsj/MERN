@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const productForm = () => {
+const ProductForm = () => {
     const [formInput, setFormInput] = useState
     ({
         Title: "",
@@ -28,16 +28,18 @@ const productForm = () => {
             });
     }
     return (
-        <form onSubmit={onSubmitHandler}>
-            <input type="text" name="Title" value={formInput.Title} onChange={onChangeHandler}/>
+        <div className="flex justify-center flex-col border-2 h-[250px]">
+            <form onSubmit={onSubmitHandler}>
+                <input placeholder="Title" className="border mb-5" type="text" name="Title" value={formInput.Title} onChange={onChangeHandler}/>
 
-            <input type="number" name="Price" value={formInput.Price} onChange={onChangeHandler}/>
+                <input placeholder="$00.0" className="border mb-5"type="number" min="0.00" step="0.01" name="Price" value={formInput.Price} onChange={onChangeHandler}/>
 
-            <input type="text" name="Description" value={formInput.Description} onChange={onChangeHandler}/>
+                <input placeholder="Description" className="border mb-5" type="text" name="Description" value={formInput.Description} onChange={onChangeHandler}/>
 
-            <input type="submit"/>
-        </form>
+                <button className="border w-[225px] hover:bg-slate-400 active:bg-slate-700" type="submit">Submit</button>
+            </form>
+        </div>
     )
 }
 
-export default productForm;
+export default ProductForm;
