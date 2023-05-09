@@ -19,6 +19,11 @@ const ProductForm = () => {
                 console.log(res.data);
             })
             .catch(err=>console.log(err));
+        setFormInput({
+            Title: "",
+            Price: "",
+            Description: ""
+        })
     }
 
     const onChangeHandler = (e) => {
@@ -29,6 +34,7 @@ const ProductForm = () => {
     }
     return (
         <div className="flex justify-center flex-col border-2 h-[250px]">
+            <p className="mb-5">Add Product</p>
             <form onSubmit={onSubmitHandler}>
                 <input placeholder="Title" className="border mb-5" type="text" name="Title" value={formInput.Title} onChange={onChangeHandler}/>
 
