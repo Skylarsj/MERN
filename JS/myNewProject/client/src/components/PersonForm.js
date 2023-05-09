@@ -20,3 +20,21 @@ const PersonForm = (props) => {
             })
             .catch(err=>console.log(err))
     }       // **** Our return/form will remain unchanged!
+    return (
+        <form onSubmit={onSubmitHandler}>
+            <p>
+                <label>First Name</label><br/>
+                {/* When the user types in this input, our onChange synthetic event 
+                    runs this arrow function, setting that event's target's (input) 
+                    value (what's typed into the input) to our updated state   */}
+                <input type="text" onChange = {(e)=>setFirstName(e.target.value)}/>
+            </p>
+            <p>
+                <label>Last Name</label><br/>
+                <input type="text" onChange = {(e)=>setLastName(e.target.value)}/>
+            </p>
+            <input type="submit"/>
+        </form>
+    )
+}
+export default PersonForm;
