@@ -1,16 +1,13 @@
-import ProductForm from './components/Product';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Main from './views/Main'
 
 function App() {
   return (
     <div className="app">
-      <div className="App w-[250px] mx-auto mt-5">
-        <ProductForm/>
-      </div>
       <BrowserRouter>
         <Routes>
-          <Route element={<ProductForm/>}></Route>
+          <Route element={<Main/>} path="/products"></Route>
         </Routes>
       </BrowserRouter>
     </div>
