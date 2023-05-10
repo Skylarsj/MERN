@@ -19,9 +19,9 @@ const ProductList = (props) => {
     return (
         <div>
             {
-                product.map((product, index)=>{
+                product.slice(0).reverse().map((product, index)=>{
                     return (
-                        <div key={index}>
+                        <div key={index} className="border p-2 hover:bg-slate-500">
                             <Link className="underline-offset-1" to={`/product/${product._id}`}>See more: {product.Title}</Link>
                         </div>
                     )

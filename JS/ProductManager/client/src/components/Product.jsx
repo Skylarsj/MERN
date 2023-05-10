@@ -10,7 +10,7 @@ const ProductForm = () => {
     });
 
     const onSubmitHandler = (e) => {
-
+        e.preventDefault();
 
         axios.post('http://localhost:8000/api/product', formInput )
         .then(res=>{
@@ -21,11 +21,11 @@ const ProductForm = () => {
 
 
         
-            setFormInput({
-                Title: "",
-                Price: "",
-                Description: ""
-            })
+        setFormInput({
+            Title: "",
+            Price: "",
+            Description: ""
+        })
     }
 
     const onChangeHandler = (e) => {

@@ -9,7 +9,9 @@ const Main = (props) => {
         <div className="pt-5">
         <ProductForm product={product} setProduct={setProduct} />
         <hr className="m-5"/>
-        <ProductList product={product} setProduct={setProduct} />
+            <div className="flex justify-center">
+                <ProductList product={product} setProduct={setProduct} />
+            </div>
         </div>
     )
 }

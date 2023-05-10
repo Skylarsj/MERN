@@ -3,4 +3,5 @@ module.exports = (app) => {
     app.get('/api/product', ProductController.findAllProducts);
     app.get('/api', ProductController.index);
     app.post('/api/product', ProductController.createProduct);
+    app.post('/api/product/:id', ProductController.getProduct);
 }
