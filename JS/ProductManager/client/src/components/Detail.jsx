@@ -8,14 +8,15 @@ const Detail = (props) => {
     useEffect(() => {
         axios.get("http://localhost:8000/api/product/" + id)
             .then( res => {
+                console.log(res)
                 setProduct(res.data);
             })
             .catch( err => console.log(err) );
-    });
+    }, [id]);
     return (
         <div>
-            <p>First Name: {product.Title}</p>
-            <p>Last Name: {product.Description}</p>
+            <p>Title: {product.Title}</p>
+            <p>Description: {product.Description}</p>
         </div>
     );
 }
