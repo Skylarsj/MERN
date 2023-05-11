@@ -14,7 +14,7 @@ const Detail = (props) => {
             .catch( err => console.log(err) );
     }, [id]);
     return (
-        <div>
+        <div className="flex justify-items-center w-[300px] m-auto border">
             <p>Title: {product.Title}</p>
             <p>Description: {product.Description}</p>
         </div>
