@@ -20,12 +20,10 @@ const EditProductForm = (props) => {
 
         e.preventDefault();
 
-        axios.patch('http://localhost:8000/api/product/edit' + id, { product})
+        axios.patch('http://localhost:8000/api/product/' + id, product)
         .then(res=>{
-            console.log(res);
-            setProduct([...product, res.data])
-            navigate('/product')
-            console.log(res.data);
+            console.log("Here it is!", res);
+            navigate('/product');
         })
         .catch(err=>console.log(err));
     }
