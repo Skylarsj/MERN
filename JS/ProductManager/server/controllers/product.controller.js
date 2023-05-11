@@ -35,3 +35,9 @@ module.exports.deleteProduct = (req, res) => {
         .catch((err) => {
             res.json({ message: 'Something went wrong', error: err })
         });}
+
+module.exports.updateProduct = (req, res) => {
+    Product.findOneAndUpdate({_id:req.params.id}, req.body, {new:true})
+    .then(updateProduct => respoonse.json(updateProduct))
+    .catch(err => response.json(err))
+}

@@ -19,8 +19,6 @@ const ProductForm = () => {
         })
         .catch(err=>console.log(err));
 
-
-        
         setFormInput({
             Title: "",
             Price: "",

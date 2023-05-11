@@ -4,7 +4,9 @@ import axios from 'axios';
 
 const ProductList = (props) => {
 
-    const {product, setProduct} = props;
+    const {removeFromDom, product, setProduct} = props;
+
+
 
     useEffect(()=>{
         axios.get("http://localhost:8000/api/product")
@@ -14,7 +16,15 @@ const ProductList = (props) => {
         .catch((err)=>{
             console.log(err);
         });
-    });
+    }, [setProduct]);
+
+    const deleteProduct = (id)  => {
+        axios.delete('http://localhost:8000/api/product/' + id)
+            .then(res => {
+                removeFromDom(id)
+            })
+            .catch(err => console.log(err))
+    }
 
     return (
         <div>
@@ -23,6 +33,9 @@ const ProductList = (props) => {
                     return (
                         <div key={index} className="border p-2 hover:bg-slate-500">
                             <Link className="underline-offset-1" to={`/product/${product._id}`}>See more: {product.Title}</Link>
+                            <div>
+                                <button className="w-full hover:bg-rose-600" onClick={(e)=>{deleteProduct(product._id)}}>Delete</button>
+                            </div>
                         </div>
                     )
                 })
