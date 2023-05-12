@@ -23,10 +23,10 @@ const EditProductForm = (props) => {
         axios.patch('http://localhost:8000/api/product/' + id, product)
         .then(res=>{
             console.log("Here it is!", res);
+            navigate('/product');
         })
         .catch(err=>console.log(err));
         
-        navigate('/product');
     }
     const onChangeHandler = (e) => {
         setProduct({
