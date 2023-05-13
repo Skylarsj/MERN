@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 require('./config/mongoose.config');
 
-const AllRoutes = require('ROUTES PATH GOES HERE');
+const AllRoutes = require('./routes/author.routes');
 AllRoutes(app);
 
 app.listen(8000, () => {
