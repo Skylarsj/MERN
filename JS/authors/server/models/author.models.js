@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 const AuthorSchema = new mongoose.Schema({
-    Author: { type: String }
+    Author: { type: String,
+    required:[
+        true,
+        "Name is Required"
+    ] }
 }, { timestamps: true });
 
 const Author = mongoose.model('Author', AuthorSchema);

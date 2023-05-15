@@ -15,11 +15,17 @@ module.exports.index = (req, res) => {
         message: "Authors"
     });
 }
-module.exports.createAuthor = (req, res) => {
-    Author.create(req.body)
-        .then(author => res.json(author))
-        .catch(err => res.json(err));
+module.exports = {
+    createAuthor: (req, res) => {
+        const {author} = req.body;
+        Author.create({
+            author: author
+        })
+        .then(author => res.josn(author))
+        .catch(err => res.satus(400).json(err))
+    }
 }
+
 
 module.exports.getAuthor = (req, res) => {
     Author.findOne({_id:req.params.id})
@@ -27,8 +33,8 @@ module.exports.getAuthor = (req, res) => {
         .catch(err => res.json(err))
 }
 
-module.exports.deleteProduct = (req, res) => {
-    Product.deleteOne({ _id: req.params.id })
+module.exports.deleteAuthor = (req, res) => {
+    Author.deleteOne({ _id: req.params.id })
         .then(result => {
             res.json({ result: result })
         })

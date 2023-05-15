@@ -9,17 +9,24 @@ const AuthorForm = (props) => {
     ({
         Author: ""
     });
-
+    const [errors, setErrors] = useState([])
     const onSubmitHandler = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:8000/api/author', formInput )
+        axios.post('http://localhost:8000/api/author', formInput.Author )
         .then(res=>{
             console.log(res);
-            setProduct([...author, res.data])
+            setAuthor([...author, res.data])
             console.log(res.data);
         })
-        .catch(err=>console.log(err));
+        .catch(err=>{
+            const errorResponse = err.response.data.errors;
+            const errorArr =[];
+            for (const key of Object.keys(errorResponse)) {
+                errorArr.push(errorResponse[key].message)
+            }
+            setErrors(errorArr)
+        });
 
         setFormInput({
             Author: ""
@@ -36,7 +43,8 @@ const AuthorForm = (props) => {
         <div className="flex justify-center flex-col border-2 h-[250px] w-[250px] m-auto">
             <div className="flex justify-center">
                 <form onSubmit={onSubmitHandler} className="flex flex-col justify-center">
-                    <p className="mb-5">Add Product</p>
+                    {errors.map((err, index) => <p key={index}>{err}</p>)}
+                    <p className="mb-5">Add Author</p>
 
                     <input placeholder="Author" className="border mb-5" type="text" name="Author" value={formInput.Author} onChange={onChangeHandler} required/>
 

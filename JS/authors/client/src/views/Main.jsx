@@ -12,11 +12,10 @@ const Main = () => {
     return (
         <div className='pt-5'>
             <AuthorForm author={author} setAuthor={setAuthor} />
-                <hr/>
+                <hr className='mt-5'/>
             <div className="flex">
-                <AuthorList author={author} setAuthor={setAuthor}/>
+                <AuthorList author={author} setAuthor={setAuthor} removeFromDom={removeFromDom}/>
             </div>
-
 
         </div>
     )
