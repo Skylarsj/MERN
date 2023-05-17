@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import AuthorForm from '../components/AuthorForm';
 import AuthorList from '../components/AuthorList';
+import { Link } from 'react-router-dom';
 
 const Main = () => { 
     const [author, setAuthor] = useState([]);
@@ -11,7 +11,7 @@ const Main = () => {
 
     return (
         <div className='pt-5'>
-            <AuthorForm author={author} setAuthor={setAuthor} />
+            <Link to="/AuthorCreate" author={author} setAuthor={setAuthor}>Add Author</Link>
                 <hr className='mt-5'/>
             <div className="flex">
                 <AuthorList author={author} setAuthor={setAuthor} removeFromDom={removeFromDom}/>

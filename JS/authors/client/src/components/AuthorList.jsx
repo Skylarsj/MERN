@@ -6,8 +6,6 @@ const AuthorList = (props) => {
 
     const {removeFromDom, author, setAuthor} = props;
 
-
-
     useEffect(()=>{
         axios.get("http://localhost:8000/api/author")
         .then((res)=>{

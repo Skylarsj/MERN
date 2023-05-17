@@ -41,6 +41,8 @@ const EditAuthorForm = (props) => {
                     <p className="mb-5">Edit Author</p>
 
                     <input placeholder="Author" className="border mb-5" type="text" name="Author" value={author.Author || ""} onChange={onChangeHandler} required/>
+
+                    <button className="border rounded-full w-[225px] hover:bg-slate-400 active:bg-slate-700" type="submit">Submit</button>
                 </form>
             </div>
         </div>

@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 const AuthorForm = (props) => {
 
-    const {author, setAuthor} = props;
 
     const [formInput, setFormInput] = useState
     ({
         Author: ""
     });
     const [errors, setErrors] = useState([])
+    const navigate = useNavigate();
     const onSubmitHandler = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:8000/api/author', formInput.Author )
+        axios.post('http://localhost:8000/api/author', formInput )
         .then(res=>{
             console.log(res);
-            setAuthor([...author, res.data])
+            navigate("/author")
             console.log(res.data);
         })
         .catch(err=>{
@@ -46,7 +47,7 @@ const AuthorForm = (props) => {
                     {errors.map((err, index) => <p key={index}>{err}</p>)}
                     <p className="mb-5">Add Author</p>
 
-                    <input placeholder="Author" className="border mb-5" type="text" name="Author" value={formInput.Author} onChange={onChangeHandler} required/>
+                    <input placeholder="Author" className="border mb-5" type="text" name="Author" value={formInput.Author} onChange={onChangeHandler}/>
 
                     <button className="border rounded-full w-[225px] hover:bg-slate-400 active:bg-slate-700" type="submit">Submit</button>
                 </form>
