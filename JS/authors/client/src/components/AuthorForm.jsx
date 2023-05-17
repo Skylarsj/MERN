@@ -44,12 +44,12 @@ const AuthorForm = (props) => {
         <div className="flex justify-center flex-col border-2 h-[250px] w-[250px] m-auto">
             <div className="flex justify-center">
                 <form onSubmit={onSubmitHandler} className="flex flex-col justify-center">
-                    {errors.map((err, index) => <p key={index}>{err}</p>)}
+                    
                     <p className="mb-5">Add Author</p>
 
-                    <input placeholder="Author" className="border mb-5" type="text" name="Author" value={formInput.Author} onChange={onChangeHandler}/>
-
-                    <button className="border rounded-full w-[225px] hover:bg-slate-400 active:bg-slate-700" type="submit">Submit</button>
+                    <input placeholder="Author" className="border" type="text" name="Author" value={formInput.Author} onChange={onChangeHandler}/>
+                    {errors.map((err, index) => <p key={index}>{err}</p>)}
+                    <button className="border rounded-full mt-5 w-[225px] hover:bg-slate-400 active:bg-slate-700" type="submit">Submit</button>
                 </form>
             </div>
         </div>
